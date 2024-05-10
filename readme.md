@@ -293,7 +293,7 @@ Remember switch to `secrets` tab then edit `System environment variables`.You ca
   "APP_VERIFICATION_TOKEN": "",
   "BOT_NAME": "ChatGPT",
   "OPENAI_KEY": "sk-",
-  "OPENAI_MODEL": "gpt-3.5-turbo"
+  "OPENAI_MODEL": "gpt-4-turbo"
 }
 ```
 
