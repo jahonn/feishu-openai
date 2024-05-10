@@ -13,11 +13,13 @@ import (
 func setDefaultPrompt(msg []openai.Messages) []openai.Messages {
 	if !hasSystemRole(msg) {
 		msg = append(msg, openai.Messages{
-			Role: "system", Content: "You are ChatGPT, " +
-				"a large language model trained by OpenAI. " +
-				"Answer in user's language as concisely as" +
-				" possible. Knowledge cutoff: 20230601 " +
-				"Current date" + time.Now().Format("20060102"),
+			// Role: "system", Content: "You are ChatGPT, " +
+			// 	"a large language model trained by OpenAI. " +
+			// 	"Answer in user's language as concisely as" +
+			// 	" possible. Knowledge cutoff: 20230601 " +
+			// 	"Current date" + time.Now().Format("20060102"),
+			Role: "system", Content: "你是飞书ChatGPT助手机器人，友善且智慧且高效，你要帮助回答飞书用户的问题，并耐心给他们有用的建议",
+
 		})
 	}
 	return msg
