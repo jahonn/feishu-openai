@@ -71,9 +71,9 @@ func LoadConfig(cfg string) *Config {
 		FeishuAppSecret:            getViperStringValue("APP_SECRET", ""),
 		FeishuAppEncryptKey:        getViperStringValue("APP_ENCRYPT_KEY", ""),
 		FeishuAppVerificationToken: getViperStringValue("APP_VERIFICATION_TOKEN", ""),
-		FeishuBotName:              getViperStringValue("BOT_NAME", ""),
+		FeishuBotName:              getViperStringValue("BOT_NAME", "ChatGPT助手"),
 		OpenaiApiKeys:              getViperStringArray("OPENAI_KEY", []string{""}),
-		OpenaiModel:                getViperStringValue("OPENAI_MODEL", "gpt-3.5-turbo"),
+		OpenaiModel:                getViperStringValue("OPENAI_MODEL", "gpt-4-turbo-2024-04-09"),
 		OpenAIHttpClientTimeOut:    getViperIntValue("OPENAI_HTTP_CLIENT_TIMEOUT", 550),
 		OpenaiMaxTokens:            getViperIntValue("OPENAI_MAX_TOKENS", 2000),
 		HttpPort:                   getViperIntValue("HTTP_PORT", 9000),
@@ -102,8 +102,8 @@ func getViperStringValue(key string, defaultValue string) string {
 	return value
 }
 
-//OPENAI_KEY: sk-xxx,sk-xxx,sk-xxx
-//result:[sk-xxx sk-xxx sk-xxx]
+// OPENAI_KEY: sk-xxx,sk-xxx,sk-xxx
+// result:[sk-xxx sk-xxx sk-xxx]
 func getViperStringArray(key string, defaultValue []string) []string {
 	value := viper.GetString(key)
 	if value == "" {
